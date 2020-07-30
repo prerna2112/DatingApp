@@ -7,6 +7,4 @@ border: 1px solid white;
 display: inline;
 }
 
-button.disabled{
-  cursor: not-allowed;
-}
+

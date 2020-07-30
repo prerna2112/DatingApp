@@ -50,16 +50,5 @@ export class MemberDetailComponent implements OnInit {
     return imageUrls;
 
   }
-  // loadUser()
-  // {
-  //    // tslint:disable-next-line: no-string-literal
-  //    this.userService.getUser(+this.activatedRoute.snapshot.params['id'])
-  //    .subscribe((userp: User) => {
-  //     this.user = userp;
-  //   }, error => {
-  //     this.alertify.error(error);
-
-  //   });
-  // }
 
 }

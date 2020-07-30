@@ -12,6 +12,10 @@ import { TabsModule} from 'ngx-bootstrap/tabs';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { AlertifyService } from './_services/alertify.service';
 import {BsDatepickerModule, BsDatepickerConfig, BsLocaleService} from 'ngx-bootstrap/datepicker';
+import {TimeagoModule} from 'ngx-timeago';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
 
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -32,8 +36,6 @@ import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import {PreventUnsavedChanges} from './_guards/prevent-unsaved-changes-guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
-
 
 export function tokenGetter()
 {
@@ -53,7 +55,9 @@ export function tokenGetter()
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+
+
    ],
    imports: [
       BrowserModule,
@@ -62,12 +66,15 @@ export function tokenGetter()
       FormsModule,
       ReactiveFormsModule,
       BrowserAnimationsModule,
+      ButtonsModule.forRoot(),
+      TimeagoModule.forRoot(),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
       JwtModule.forRoot({
             config: {
               tokenGetter: tokenGetter,
